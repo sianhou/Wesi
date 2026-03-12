@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wesi"
+version = "0.1.0"
+description = "3D wave equation simulation and RTM MVP"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy>=1.24",
+]
+
+[project.optional-dependencies]
+dev = [
+  "cffi>=1.16",
+  "pytest>=8.0",
+]
+ui = [
+  "PySide6>=6.7",
+]
+viz = [
+  "vtk>=9.3",
+]
+torch = [
+  "torch>=2.2",
+]
+segy = [
+  "segyio>=1.9",
+]
+
+[project.scripts]
+wesi = "wesi.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
