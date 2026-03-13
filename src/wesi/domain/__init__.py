@@ -15,9 +15,11 @@ from .models import (
     Submodel,
     Subtask,
 )
+from .survey_grid import GridControlPoint, SurveyGrid
 
 __all__ = [
     "CheckpointPolicy",
+    "GridControlPoint",
     "GridSpec",
     "Horizon",
     "HorizonSet",
@@ -29,5 +31,6 @@ __all__ = [
     "Receiver",
     "Shot",
     "Submodel",
+    "SurveyGrid",
     "Subtask",
 ]
